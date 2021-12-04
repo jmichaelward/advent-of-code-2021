@@ -7,14 +7,14 @@ class Position {
 	 *
 	 * @var int
 	 */
-	private int $horizontal = 0;
+	protected int $horizontal = 0;
 
 	/**
 	 * The current depth.
 	 *
 	 * @var int
 	 */
-	private int $depth = 0;
+	protected int $depth = 0;
 
 	/**
 	 * Update coordinates.
@@ -28,7 +28,7 @@ class Position {
 		try {
 			call_user_func( [ $this, "move_{$direction->get_direction()}" ], $direction->get_value() );
 		} catch ( \Throwable $e ) {
-			throw new \Exception('Invalid direction given');
+			throw new \Exception('Invalid direction given ' . $e->getMessage() );
 		}
 	}
 
@@ -40,7 +40,7 @@ class Position {
 	 * @return void
 	 */
 	public function move_up( int $value ): void {
-		$this->depth = $this->depth - $value;
+		$this->depth -= $value;
 	}
 
 	/**
@@ -51,7 +51,7 @@ class Position {
 	 * @return void
 	 */
 	public function move_down( int $value ): void {
-		$this->depth = $this->depth + $value;
+		$this->depth += $value;
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Position {
 	 * @return void
 	 */
 	public function move_forward( int $value ): void {
-		$this->horizontal = $this->horizontal + $value;
+		$this->horizontal += $value;
 	}
 
 	/**
