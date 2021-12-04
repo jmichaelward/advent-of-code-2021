@@ -17,4 +17,4 @@ if ( empty( $day ) ) {
 
 $path = $day[0] . ( $day[1] ? "/{$day[1]}/" : '/' ) . 'index.php';
 
-require_once __DIR__ . "/src/{$path}";
+require_once __DIR__ . "/challenges/{$path}";
