@@ -25,19 +25,44 @@ class Position {
 	 * @return void
 	 */
 	public function update( Direction $direction ): void {
-		switch ( strtolower( $direction->get_direction() ) ) {
-			case 'up':
-				$this->depth = $this->depth - $direction->get_value();
-				break;
-			case 'down':
-				$this->depth = $this->depth + $direction->get_value();
-				break;
-			case 'forward':
-				$this->horizontal = $this->horizontal + $direction->get_value();
-				break;
-			default:
-				throw new Exception('Invalid direction.');
+		try {
+			call_user_func( [ $this, "move_{$direction->get_direction()}" ], $direction->get_value() );
+		} catch ( \Throwable $e ) {
+			throw new \Exception('Invalid direction given');
 		}
+	}
+
+	/**
+	 * Move the position up.
+	 *
+	 * @param int $value
+	 *
+	 * @return void
+	 */
+	public function move_up( int $value ): void {
+		$this->depth = $this->depth - $value;
+	}
+
+	/**
+	 * Move the position down.
+	 *
+	 * @param int $value
+	 *
+	 * @return void
+	 */
+	public function move_down( int $value ): void {
+		$this->depth = $this->depth + $value;
+	}
+
+	/**
+	 * Move the position forward.
+	 *
+	 * @param int $value
+	 *
+	 * @return void
+	 */
+	public function move_forward( int $value ): void {
+		$this->horizontal = $this->horizontal + $value;
 	}
 
 	/**
