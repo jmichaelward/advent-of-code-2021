@@ -15,4 +15,4 @@ foreach ( inputs_2_1() as $data ) {
 	$position->update(new Direction($data));
 }
 
-echo $position->get_multiplied_coordinates() . PHP_EOL;
+$position->print_multiplied_coordinates();

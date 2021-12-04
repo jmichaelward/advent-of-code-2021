@@ -45,7 +45,7 @@ class Position {
 	 *
 	 * @return void
 	 */
-	public function get_multiplied_coordinates() {
-		echo $this->horizontal * $this->depth;
+	public function print_multiplied_coordinates() {
+		echo $this->horizontal * $this->depth . PHP_EOL;
 	}
 }
