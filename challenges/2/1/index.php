@@ -9,6 +9,8 @@ use JMichaelWard\AdventOfCode2021\Two\Direction;
 /**
  * Run the program.
  */
+print_title('Day 2: Dive!');
+
 $position = new Position();
 
 foreach ( inputs_2_1() as $data ) {
