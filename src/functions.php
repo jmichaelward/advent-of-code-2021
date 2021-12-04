@@ -1,5 +1,16 @@
 <?php
-function inputs_1_1() {
+/**
+ * Print the title of the challenge.
+ *
+ * @param string $title
+ *
+ * @return void
+ */
+function print_title( string $title ): void {
+	echo $title . PHP_EOL;
+}
+
+function inputs_1_1(): array {
 	return explode( PHP_EOL, '132
 146
 153

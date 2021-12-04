@@ -1,6 +1,6 @@
 <?php
 
-echo 'Day 1: Sonar Sweep' . PHP_EOL;
+print_title( 'Part 1: Sonar Sweep' );
 
 $measurements = inputs_1_1();
 
