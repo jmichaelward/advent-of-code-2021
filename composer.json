@@ -4,7 +4,10 @@
     "autoload": {
         "psr-4": {
             "Jmichaelward\\AdventOfCode2021\\": "src/"
-        }
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "authors": [
         {
