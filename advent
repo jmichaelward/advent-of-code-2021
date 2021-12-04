@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+try {
+	require_once __DIR__ . '/vendor/autoload.php';
+} catch ( Throwable $e ) {
+	echo 'You must run "composer install" before executing these commands.';
+	exit(1);
+}
+
+$day = explode( '.', $argv[1] ?? '' );
+
+if ( empty( $day ) ) {
+	echo 'You must select a day for your solution. e.g., "advent 1.1"';
+	exit(1);
+}
+
+$path = $day[0] . ( $day[1] ? "/{$day[1]}/" : '/' ) . 'index.php';
+
+require_once __DIR__ . "/src/{$path}";
