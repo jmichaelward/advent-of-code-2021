@@ -3,7 +3,7 @@
     "description": "Solutions for the 2021 Advent of Code challenge.",
     "autoload": {
         "psr-4": {
-            "Jmichaelward\\AdventOfCode2021\\": "src/"
+            "JMichaelWard\\AdventOfCode2021\\": "src/"
         },
         "files": [
             "src/functions.php"
